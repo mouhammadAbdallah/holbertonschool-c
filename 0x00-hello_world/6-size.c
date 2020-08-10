@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /**
- * main - using printf
+ * main - size
  *
  * Return: Always 0 (Success)
  */
