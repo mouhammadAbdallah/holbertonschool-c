@@ -8,15 +8,16 @@ int main(void)
 {
 	unsigned long count, i, j, k;
 
-	i = 0;
-	j = 1;
-	for (count = 0; count < 98; count++)
+	i = 1;
+	j = 2;
+	printf("%lu, %lu, ", i, j);
+	for (count = 3; count <= 98; count++)
 	{
 		k = i + j;
 		i = j;
 		j = k;
 		printf("%lu", k);
-		if (count == 97)
+		if (count == 98)
 			putchar('\n');
 		else
 		{
