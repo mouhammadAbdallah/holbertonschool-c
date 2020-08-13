@@ -12,7 +12,7 @@ int main(void)
 	s0 = 1;
 	s1 = 2;
 	printf("%ld, %ld, ", s0, s1);
-	for (i = 3; i <= 43; i++)
+	for (i = 3; i <= 49; i++)
 	{
 		sn = s0 + s1;
 		s1 = sn;
