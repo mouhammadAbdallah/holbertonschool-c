@@ -8,5 +8,20 @@
  */
 int print_sign(int n)
 {
-	return ((n > 0) ? 1 : (n == 0) ? 0 : -1);
+	int result;
+
+	result = (n > 0) ? 1 : (n == 0) ? 0 : -1;
+	switch (result)
+	{
+	case 1:
+		_putchar('+');
+		break;
+	case 0:
+		_putchar('0');
+		break;
+	case -1:
+		_putchar('-');
+		break;
+	}
+	return (result);
 }
