@@ -2,6 +2,7 @@
 
 /**
  * print_times_table - table.
+ * @n: number
  *
  * Return: nothing.
  */
@@ -19,7 +20,7 @@ void print_times_table(int n)
 			c = a / 100;
 			if (c != 0)
 				_putchar('0' + c);
-			if (c !=0 || d != 0)
+			if (c != 0 || d != 0)
 				_putchar('0' + d);
 			_putchar('0' + u);
 			if (j != n - 1)
