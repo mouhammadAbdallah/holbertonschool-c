@@ -6,7 +6,7 @@
  *
  * Return: 1 if c is lower
  */
-int _islower(int c);
+int _islower(int c)
 {
-	return (((c - 'a') >= 0) ? 1 : 0);
+	return ((c >= 97 && c <= 122) ? 1 : 0);
 }
