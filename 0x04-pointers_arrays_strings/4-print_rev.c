@@ -2,7 +2,7 @@
 
 /**
  * print_rev - str reverse
- * @str: a str
+ * @s: a str
  *
  * void
  */
