@@ -16,17 +16,17 @@ int _strlen(char *s)
 }
 
 /**
- * _strlen - str len
- * @s: a pointer
+ * puts_half - half word
+ * @str: a str
  *
- * Return: len
+ * void
  */
 void puts_half(char *str)
 {
 	int l, i, c;
 
 	l = _strlen(str);
-	c = (l % 2 == 0) ? l / 2 : (l - 1) / 2;
+	c = (l % 2 == 0) ? l / 2 : (l - 1) / 2 + 1;
 	for (i = c; i < l; i++)
 		_putchar(str[i]);
 	_putchar('\n');
