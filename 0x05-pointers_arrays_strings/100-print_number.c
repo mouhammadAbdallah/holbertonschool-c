@@ -14,7 +14,7 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = n * -1;
+		/*n = n * -1;*/
 	}
 
 	while (tmp / 10 != 0)
@@ -25,10 +25,20 @@ void print_number(int n)
 	k = j;
 	for (i = 1; i <= k; i = i * 10)
 	{
-		if (j != 1)
-			_putchar(n / j + '0');
+		if (n > 0)
+		{
+			if (j != 1)
+				_putchar(n / j + '0');
+			else
+				_putchar(n + '0');
+		}
 		else
-			_putchar(n + '0');
+		{
+			if (j != 1)
+				_putchar(-n / j + '0');
+			else
+				_putchar(-n + '0');
+		}
 		n = n % j;
 		j = j / 10;
 	}
