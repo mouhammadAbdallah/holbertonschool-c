@@ -1,25 +1,24 @@
 #include "holberton.h"
 
 /**
- * rot13 - coding
- * @s: str
- *
- * Return: string
+ * rot13 - rotate characters 13 places in the alphabet
+ * @s: string
+ * Return: string `s` rotated
  */
+
 char *rot13(char *s)
 {
-	int i = 0;
-	char a, z;
+	int i;
+	char storeh[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+	char storel[] = "nopqrstuvwxyzabcdefghijklm";
 
-	while (s[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if ((s[i] >= 97 && s[i] <= 122) || (s[i] >= 65 && s[i] <= 90))
+		if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
 		{
-			a = (s[i] <= 90) ? 'A' : 'a';
-			z = (a == 'a') ? 'z' : 'Z';
-			s[i] = (s[i] + 13 <= z) ? s[i] + 13 : s[i] + 13 - z + a - 1;
+			s[i] = (s[i] - 65 > 25) ?
+				storel[s[i] - 97] : storeh[s[i] - 65];
 		}
-		i++;
 	}
 	return (s);
 }
