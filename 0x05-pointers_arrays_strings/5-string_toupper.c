@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * string_toupper - upper
+ * string_toupper - upper letters
  * @s: int array
  *
- * void
+ * Return: string
  */
 char *string_toupper(char *s)
 {
@@ -17,5 +17,5 @@ char *string_toupper(char *s)
 			s[i] += 'A' - 'a';
 		i++;
 	}
-	return s;
+	return (s);
 }
