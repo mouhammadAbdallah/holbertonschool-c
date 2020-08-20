@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _strstr - find first string match
@@ -30,5 +31,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
