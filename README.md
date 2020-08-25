@@ -17,5 +17,5 @@ This repository contains:
 * 0x05-pointers_arrays_strings
 * 0x06-pointers_arrays_strings
 * 0x07. C - Recursion
-* 
+* 0x08. C - Variadic functions
 * 0x09-argc_argv
