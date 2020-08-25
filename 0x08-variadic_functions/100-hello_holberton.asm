@@ -1,16 +1,17 @@
-	section .text
-	global _start
+global main
 
-_start:
-	mov rax, 1 		;write
-	mov rdi, 1 		; stdout
+section .text
+main:
+	mov rax, 1
+	mov rdi, 1
 	mov rsi, message
-	mov rdx, message_length
-	syscall
+	mov rdx, message_len 
+	syscall 
 
-	mov rax, 60
-	xor rdi, rdi     	; ret 0 sucess
-	syscall
+	mov rax, 60 
+	mov rdi, 0
+	syscall 
 
-	message	db "Hello, Holberton", 0x0A
-	message_length	 equ $ - message
+section .data
+	message: db "Hello, Holberton", 10
+	message_len: equ $ - message
