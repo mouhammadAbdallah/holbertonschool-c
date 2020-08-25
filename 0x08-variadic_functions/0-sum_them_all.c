@@ -1,12 +1,11 @@
 #include "variadic_functions.h"
-#include <stdio.h>
 #include <stdarg.h>
 
 /**
  * sum_them_all - sum
  * @n: count
  *
- * Return: 0 (Success)
+ * Return: sum
  */
 int sum_them_all(const unsigned int n, ...)
 {
