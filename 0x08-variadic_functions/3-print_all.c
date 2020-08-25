@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_strings - print str
+ * print_all - print all type
  * @format: format array
  *
  * void
