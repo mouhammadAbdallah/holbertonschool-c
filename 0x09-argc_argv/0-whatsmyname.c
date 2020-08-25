@@ -1,20 +1,15 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _puts_recursion - my puts
- * @s: str
+ * @argc: argc
+ * @argv: arguments
  *
- * void
+ * Return: 0 (Success)
  */
-void _puts_recursion(char *s)
+int main(int argc __attribute__((unused)), char **argv)
 {
-	if (s[0] == '\0')
-	{
-		_putchar('\n');
-	}
-	else
-	{
-		_putchar(s[0]);
-		_puts_recursion(&s[1]);
-	}
+	printf("%s\n", argv[0]);
+	return (0);
 }
