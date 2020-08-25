@@ -5,6 +5,7 @@
 /**
  * print_numbers - print nbs
  * @separator: str separator
+ * @n: count
  *
  * void
  */
