@@ -1,49 +1,95 @@
-#include "variadic_functions.h"
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
- * print_all - print all type
- * @format: format array
+ * printf_char - printfs a char from var args
  *
- * void
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_char(va_list list)
+{
+	printf("%c", (char)va_arg(list, int));
+}
+
+/**
+ * printf_int - printfs an int from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_int(va_list list)
+{
+	printf("%d", va_arg(list, int));
+}
+
+/**
+ * printf_float - printfs a float from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_float(va_list list)
+{
+	printf("%f", (float)va_arg(list, double));
+}
+
+/**
+ * printf_string - printfs a string from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_string(va_list list)
+{
+	char *str = va_arg(list, char *);
+
+	while (str != NULL)
+	{
+		printf("%s", str);
+		return;
+	}
+	printf("(nil)");
+}
+
+/**
+ * print_all - prints various types given a format string for the arguments
+ *
+ * @format: string containing type information for args
+ *
+ * Return: void
  */
 void print_all(const char *const format, ...)
 {
-	int i;
-	va_list arg;
-	char *s, *sep;
+	const char *ptr;
+	va_list list;
+	functionkey key[4] = {{printf_char, 'c'}, {printf_int, 'i'}
+	, {printf_float, 'f'}, {printf_string, 's'}};
+	int keyind = 0, notfirst = 0;
 
-	va_start(arg, format);
-	i = 0;
-	while (format[i] != '\0')
+	ptr = format;
+	va_start(list, format);
+	while (format != NULL && *ptr)
 	{
-		if (format[i + 1] == '\0')
-			sep = "\n";
-		else
-			sep = ", ";
-		switch (format[i])
+		if (key[keyind].spec == *ptr)
 		{
-		case 'c':
-			printf("%c%s", va_arg(arg, int), sep);
-			break;
-		case 'i':
-			printf("%d%s", va_arg(arg, int), sep);
-			break;
-		case 'f':
-			printf("%f%s", va_arg(arg, double), sep);
-			break;
-		case 's':
-			s = va_arg(arg, char *);
-			if (s == NULL)
-				s = "(nil)";
-			printf("%s%s", s, sep);
-			break;
-
-		default:
-			break;
+			if (notfirst)
+				printf(", ");
+			notfirst = 1;
+			key[keyind].f(list);
+			ptr++;
+			keyind = -1;
 		}
-		i++;
+		keyind++;
+		ptr += keyind / 4;
+		keyind %= 4;
 	}
-	va_end(arg);
+	printf("\n");
+
+	va_end(list);
 }
