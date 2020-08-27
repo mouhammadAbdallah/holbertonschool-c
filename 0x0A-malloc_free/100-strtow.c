@@ -2,6 +2,25 @@
 #include <stdlib.h>
 
 /**
+ * word_len - nb of chr in str
+ * @str: The string to be searched.
+ *
+ * Return: nb of chr in str
+ */
+int word_len(char *str)
+{
+	int index = 0, len = 0;
+
+	while (*(str + index) && *(str + index) != ' ')
+	{
+		len++;
+		index++;
+	}
+
+	return (len);
+}
+
+/**
  * nbOfWords - nbOfWords
  * @str: str
  *
@@ -9,18 +28,23 @@
  */
 int nbOfWords(char *str)
 {
-	int i = 0, l = 0;
+	int index = 0, words = 0, len = 0;
 
-	while (str[i] != '\0')
+	for (index = 0; *(str + index); index++)
+		len++;
+
+	for (index = 0; index < len; index++)
 	{
-		if (str[i] != ' ' && str[i + 1] == ' ')
-			l++;
-		i++;
+		if (*(str + index) != ' ')
+		{
+			words++;
+			index += word_len(str + index);
+		}
 	}
-	if (str[i - 1] != ' ')
-		l++;
-	return (l);
+
+	return (words);
 }
+
 /**
  * strtow - split string
  * @str: str to split
