@@ -1,4 +1,8 @@
 #include <stdarg.h>
+
+#ifndef _VARIADIC_FUNCTIONS_H_
+#define _VARIADIC_FUNCTIONS_H_
+
 void _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
@@ -18,3 +22,4 @@ typedef struct functionkey
 	char spec;
 } functionkey;
 
+#endif
