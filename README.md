@@ -19,3 +19,4 @@ This repository contains:
 * 0x07. C - Recursion
 * 0x08. C - Variadic functions
 * 0x09-argc_argv
+* 0x0A-malloc_free
