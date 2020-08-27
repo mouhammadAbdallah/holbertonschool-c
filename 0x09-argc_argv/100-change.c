@@ -9,7 +9,7 @@
  *
  * void
  */
-void coins(int n, int c[])
+void coins(unsigned int n, unsigned int c[])
 {
 	if (n == 0)
 		return;
@@ -50,7 +50,7 @@ void coins(int n, int c[])
  */
 int main(int argc, char **argv)
 {
-	int c[5], s = 0, i;
+	unsigned int c[5], s = 0, i;
 
 	c[0] = c[1] = c[2] = c[3] = c[4] = 0;
 	if (argc != 2)
