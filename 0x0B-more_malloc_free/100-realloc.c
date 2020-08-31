@@ -23,18 +23,18 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (!new_size)
 	{
 		free(ptr);
+		return (NULL);
+	}
+	if (new_size == old_size)
 		return (ptr);
-	}
-	else
-	{
-		tmp = ptr;
-		l = (new_size < old_size) ? new_size : old_size;
-		buffer = malloc(new_size);
-		if (buffer == NULL)
-			return (NULL);
-		for (i = 0; i < l; i++)
-			buffer[i] = tmp[i];
-		free(ptr);
-		return (buffer);
-	}
+
+	tmp = ptr;
+	l = (new_size < old_size) ? new_size : old_size;
+	buffer = malloc(new_size);
+	if (buffer == NULL)
+		return (NULL);
+	for (i = 0; i < l; i++)
+		buffer[i] = tmp[i];
+	free(ptr);
+	return (buffer);
 }
