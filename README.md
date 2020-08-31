@@ -20,4 +20,5 @@ This repository contains:
 * 0x08. C - Variadic functions
 * 0x09-argc_argv
 * 0x0A-malloc_free
+* 0x0B-more_malloc_free
 * 0x80-static_libraries
