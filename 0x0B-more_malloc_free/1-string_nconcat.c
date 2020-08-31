@@ -39,13 +39,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s = malloc(sizeof(*s) * l);
 	if (!s)
 		return (NULL);
-	for (i = 0; i < l; i++)
+	for (i = 0; i < l - 1; i++)
 	{
 		if (i < l1)
 			s[i] = s1[i];
 		else
 			s[i] = s2[i - l1];
 	}
-	s[i] = '\0';
+	s[l] = '\0';
 	return (s);
 }
