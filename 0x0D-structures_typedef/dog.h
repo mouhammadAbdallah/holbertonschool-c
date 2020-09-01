@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * struct dog - struct
+ * @name: str
+ * @age: float
+ * @owner: str
+ */
 struct dog
 {
 	char *name;
