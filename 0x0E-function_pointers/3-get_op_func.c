@@ -24,5 +24,5 @@ int (*get_op_func(char *s))(int a, int b)
 			return (ops[i].f);
 		i++;
 	}
-	return (ops[i].f);
+	return (NULL);
 }
