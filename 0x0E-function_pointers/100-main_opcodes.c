@@ -26,4 +26,5 @@ int main(int argc, char **argv)
 	for (i = 0; i < nb - 1; i++)
 		printf("%02hhx ", main_add[i]);
 	printf("%02hhx\n", main_add[i]);
+	return (0);
 }
