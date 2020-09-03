@@ -23,4 +23,5 @@ This repository contains:
 * 0x0B-more_malloc_free
 * 0x0C-preprocessor
 * 0x0D-structures_typedef
+* 0x0E-function_pointers
 * 0x80-static_libraries
