@@ -1,35 +1,33 @@
 #include "holberton.h"
 
 /**
- * pow_2 - pow_2
- * @n: 2 ^ n
+ *binary_to_uint-converts a binary number to an unsigned int
+ *@b: is pointing to a string of 0 and 1 chars
  *
- * Return: 2 ^ n
+ *Return: the converted number, or 0
  */
-unsigned int pow_2(long int n)
-{
-	if (n == 0)
-		return (1);
-	return (2 * pow_2(n - 1));
-}
 
-/**
- * binary_to_uint - binary_to_uint
- * @b: number str
- *
- * Return: converted unsigned int
- */
 unsigned int binary_to_uint(const char *b)
 {
-	long int len, i;
-	unsigned int nb = 0;
 
-	if (!b)
+	unsigned int sum = 0, binary = 1;
+
+	int i;
+
+	if (b == NULL)
 		return (0);
-	for (len = 0; b[len]; len++)
-		if (!(b[len] == '0' || b[len] == '1'))
+	for (i = 0; b[i] != '\0'; i++)
+	{
+		if (b[i] != '0' && b[i] != '1')
 			return (0);
-	for (i = len - 1; i >= 0; i--)
-		nb += pow_2((len - 1) - i) * (b[i] - '0');
-	return (nb);
+	}
+	i--;
+	while (i >= 0)
+	{
+		if (b[i] == '1')
+			sum = sum + binary;
+		binary = binary * 2;
+		i--;
+	}
+	return (sum);
 }
