@@ -25,5 +25,5 @@ This repository contains:
 * 0x0D-structures_typedef
 * 0x0E-function_pointers
 * 0x0F-bit_manipulation
+* 0x10-file_io
 * 0x80-static_libraries
-
