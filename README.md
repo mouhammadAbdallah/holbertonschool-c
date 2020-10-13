@@ -27,6 +27,7 @@ This repository contains:
 * 0x0F-bit_manipulation
 * 0x10-file_io
 * 0x11-makefiles
+* 0x13-signals
 
 
 optional projects:
