@@ -8,11 +8,7 @@
  */
 void sig_handler(int signo)
 {
-	if (signo == SIGINT)
-	{
-		signal(SIGINT, sig_handler);
-		printf("Gotcha! [%d]\n", SIGINT);
-	}
+	printf("Gotcha! [%d]\n", signo);
 }
 
 /**
