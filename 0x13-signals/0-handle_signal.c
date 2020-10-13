@@ -9,6 +9,7 @@
 void sig_handler(int signo)
 {
 	printf("Gotcha! [%d]\n", signo);
+	fflush(stdout);
 }
 
 /**
