@@ -16,4 +16,7 @@ void (*current_handler_signal(void))(int);
 int handle_sigaction(void);
 void _sa_handler(int signum);
 
+int trace_signal_sender(void);
+void sigquit_handler(int signum, siginfo_t *info, void *);
+
 #endif /* SIGNALS_H */
