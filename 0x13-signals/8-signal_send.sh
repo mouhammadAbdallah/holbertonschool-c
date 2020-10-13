@@ -1,10 +1,8 @@
-#!/bin/bash
-# Sends the signal SIGQUIT to a process, given its PID
-
-usage(){
-    printf "Usage: %s <pid>\n" "${BASH_SOURCE}"
-    exit 1
-}
-[ "$#" != 1 ] && usage
-kill -SIGQUIT "$1" > /dev/null 2>&1
-exit
+#!/bin/sh
+# send a sigquit signal to a process
+if [ $# -ne 1 ]
+then
+	echo "Usage: $0 <pid>"
+	exit 1
+fi
+kill -s 3 $1
