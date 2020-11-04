@@ -32,11 +32,5 @@ todo_api_4: $(4)
 todo_api_5: $(5)
 	$(CC) $(CFLAGS) $(5) -o todo_api_5
 
-todo_api_6: $(6)
-	$(CC) $(CFLAGS) $(6) -o todo_api_6
-
-todo_api_7: $(7)
-	$(CC) $(CFLAGS) $(7) -o todo_api_7
-
 clean:
 	rm -f $(OBJS) todo_api_0 todo_api_1 todo_api_2 todo_api_3 todo_api_4 todo_api_5 todo_api_6 todo_api_7
