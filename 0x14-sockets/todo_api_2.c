@@ -1,9 +1,8 @@
-include "restapi.h"
+#include "restapi.h"
 
 /**
  * print_header - print header key/value pairs of received HTTP request
  * @buffer: HTTP request to print
- * void
  */
 void print_header(char *buffer)
 {
