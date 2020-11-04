@@ -6,8 +6,8 @@
 
 /**
  * error - close file desc
- * @fd: file desc
- * @res: addrinfo
+ * @fd: file descriptor to close
+ * @res: addrinfo to free
  */
 void error(int fd, struct addrinfo *res)
 {
@@ -17,20 +17,19 @@ void error(int fd, struct addrinfo *res)
 }
 
 /**
- * main - entry point
- * @argc: nc
- * @argv: argv
+ * main - connecting to listening server
+ * @argc: number of command-line arguments
+ * @argv: command-line arguments containing host and port to connect to
  *
- * Return: 0 success
+ * Return: 0 on success, 1 on failure
  */
-int main(void)
+int main(int argc, char *argv[])
 {
-
 	char host[254];
 	struct addrinfo hints, *res;
 	int sfd;
 
-	if (argc != 3)
+	if (argc  != 3)
 	{
 		fprintf(stderr, "Usage: %s <host> <port>\n", *argv);
 		return (EXIT_FAILURE);
