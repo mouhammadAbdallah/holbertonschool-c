@@ -34,4 +34,5 @@ optional projects:
 
 * 0x80-static_libraries
 * 0x81-dynamic_libraries
+* 0x84-libasm
 
