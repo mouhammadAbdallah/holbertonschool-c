@@ -20,8 +20,8 @@ asm_strlen:
 	cld
 repne	scasb
 	not ecx
-	lea eax, [ecx-1]	
-end:	
+	lea eax, [ecx-1]
+end:
 	mov rsp, rbp		; Restore previous stack frame
 	pop rbp			; Those two lines are equivalent to 'leave'
 
